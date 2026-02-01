@@ -27,8 +27,7 @@ html {
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
-  display: flex;
-  flex-direction: row;  
+
 }
 
 ::selection {
@@ -85,6 +84,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.layout{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -171,6 +177,9 @@ textarea {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
+  .layout {
+    flex-direction: row;
+  }
 }
 
 @media print,
