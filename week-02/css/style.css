@@ -93,12 +93,6 @@ body {
   line-height: 1.6;
 }
 
-.page{
-  display:flex;
-  flex-direction:column;
-}
-
-
 .layout{
   max-width: 1100px;
   margin: 80px auto;
@@ -112,6 +106,7 @@ body {
   background: #fff;
   display: flex;
   flex-direction: column;
+  letter-spacing: .2em; font-size: 1.5rem; 
   padding: 40px;
   font-size: 2rem;
   letter-spacing: 4em;
@@ -242,18 +237,15 @@ footer {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
-
-  .page{
-    flex-direction: row;
-  }
   
   .site-header {
     flex-direction: row;
+    letter-spacing: .6em; font-size: 2rem;
   }
   
-  .layout {
-    flex-direction: row;
-  }
+  .layout { flex-direction: row; align-items: flex-start; }
+  .profile { flex: 2; min-width: 0; }
+  .links { flex: 1; }
 }
 
 @media print,
