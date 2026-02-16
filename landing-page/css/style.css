@@ -112,6 +112,10 @@ h1{
   font-size: 3.6em;
 }
 
+.hero-explain{
+  display: block;
+}
+
 }
 
 .hero-highlight {
