@@ -124,18 +124,28 @@ h1{
 
 
 #cards {
-  padding: 40px 0;
+  padding: 80px 0;
   background: #ffffff;
-  display: flex;
-
+  
   h2{
     font-weight: 900;
     color: rgb(6, 6, 56);
-    font-size: 2.4em;
+    font-size: 2.6em;
+  }
+
+  .cards-explain{
+    font-size: 1em;
+    color: #4f4848;
+  }
+
+  .cards-block {
+    display: block;
   }
 }
 
+
 #cards .feature-card {
+
   background: #eee;
   border: 0;
   height: auto;
@@ -150,6 +160,15 @@ h1{
 
 #cards .card-title{
   font-weight: 900;
+  display: flex;
+  align-items: center;
+}
+
+#cards .card-title i{
+  line-height: 1;
+  font-size: 1.2em;
+  display: inline-flex;
+  align-items: center;
 }
 
 #cards .card-text{
@@ -180,6 +199,7 @@ h1{
   padding: 80px 0;
   background: rgb(6, 6, 56);
   display: flex;
+  min-height: 20vh;
   justify-content: center;
   align-items: center;
 
