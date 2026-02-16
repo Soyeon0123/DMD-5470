@@ -147,9 +147,10 @@ h1{
 
 #cards .feature-card {
 
-  background: #eee;
+  background: #f4f4f7;
   border: 0;
   height: auto;
+  border-radius: 16px;
 }
 
 #cards .feature-card .card-body{
