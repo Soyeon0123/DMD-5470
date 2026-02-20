@@ -141,6 +141,7 @@ textarea {
   width: 100%;
 
   background-image: var(--paper-tex-bg-2);
+  background-size: 65%;
   border-radius: 4px;
   padding: 8px 16px;
   cursor: pointer;
