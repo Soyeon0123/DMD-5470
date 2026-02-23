@@ -67,7 +67,7 @@ URI     : https://colorlib.com
             <h1>Mobile App Landing Page Template</h1>
             <p class="tagline">The one and only solution for any kind of mobila app landing needs. Just change the screenshots and texts and you are good to go. </p>
         </div>
-        <div class="img-holder mt-3"> <div class= "animate__animated animate__fadeIn"><img src="images/iphonex.png" alt="phone" class="img-fluid"></div></div>
+        <div class="img-holder mt-3"> <div class= "phone-img" style="opacity:0;"><img src="images/iphonex.png" alt="phone" class="img-fluid"></div></div>
     </header>
 
     <div class="client-logos my-5">
@@ -273,33 +273,29 @@ URI     : https://colorlib.com
             <div class="row">
                 <div class="col-md-8 d-flex align-items-center">
                     <ul class="list-unstyled ui-steps">
-                        <div class="animate__animated animate__fadeInLeft">
-                            <li class="media">
-                                <div class="circle-icon mr-4">1</div>
-                                <div class="media-body">
-                                    <h5>Create an Account</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
-                                </div>
-                            </li>
-                        </div>
-                        <div class="animate__animated animate__fadeInLeft">
-                            <li class="media my-4">
-                                <div class="circle-icon mr-4">2</div>
-                                <div class="media-body">
-                                    <h5>Share with friends</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem eveniet</p>
-                                </div>
-                            </li>
-                        </div>
-                        <div class="animate__animated animate__fadeInLeft">
-                            <li class="media">
-                                <div class="circle-icon mr-4">3</div>
-                                <div class="media-body">
-                                    <h5>Enjoy your life</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
-                                </div>
-                            </li>
-                        </div>
+                        <li class="media" data-aos="fade-right">
+                            <div class="circle-icon mr-4">1</div>
+                            <div class="media-body">
+                                <h5>Create an Account</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
+                            </div>
+                        </li>
+                        
+                        <li class="media my-4" data-aos="fade-right" data-aos-delay="200">
+                            <div class="circle-icon mr-4">2</div>
+                            <div class="media-body">
+                                <h5>Share with friends</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem eveniet</p>
+                            </div>
+                        </li>
+
+                        <li class="media" data-aos="fade-right" data-aos-delay="400">
+                            <div class="circle-icon mr-4">3</div>
+                            <div class="media-body">
+                                <h5>Enjoy your life</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -392,7 +388,7 @@ URI     : https://colorlib.com
                         <div class="list-group-item"><del>Reports and analytics</del></div>
                     </ul>
                     <div class="card-body">
-                        <div class="animate animated animate__bounceIn">
+                        <div class="btn-animate" style="opacity:0; --animate-duration:0.4s;">
                             <a href="#" class="btn btn-primary btn-lg btn-block">Choose this Plan</a>
                         </div>
                     </div>
@@ -410,7 +406,7 @@ URI     : https://colorlib.com
                         <div class="list-group-item">Reports and analytics</div>
                     </ul>
                     <div class="card-body">
-                        <div class="animate animated animate__bounceIn">
+                        <div class="btn-animate" style="opacity:0; --animate-duration:0.4s;">
                             <a href="#" class="btn btn-primary btn-lg btn-block">Choose this Plan</a>
                         </div>
                     </div>
@@ -428,7 +424,7 @@ URI     : https://colorlib.com
                         <div class="list-group-item">Web hooks</div>
                     </ul>
                     <div class="card-body">
-                        <div class="animate animated animate__bounceIn">
+                        <div class="btn-animate" style="opacity:0; --animate-duration:0.4s;">
                             <a href="#" class="btn btn-primary btn-lg btn-block">Choose this Plan</a>
                         </div>
                     </div>
@@ -452,17 +448,17 @@ URI     : https://colorlib.com
 
             <div class="row pt-4">
                 <div class="col-md-6">
-                    <h4 class="mb-3" data-aos="flip-left">Can I try before I buy?</h4>
-                    <p class="light-font mb-5" data-aos="flip-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
-                    <h4 class="mb-3" data-aos="flip-left">What payment methods do you accept?</h4>
-                    <p class="light-font mb-5" data-aos="flip-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
+                    <h4 class="mb-3" data-aos="flip-left" data-aos-delay="300">Can I try before I buy?</h4>
+                    <p class="light-font mb-5" data-aos="flip-left" data-aos-delay="300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
+                    <h4 class="mb-3" data-aos="flip-left" data-aos-delay="500">What payment methods do you accept?</h4>
+                    <p class="light-font mb-5" data-aos="flip-left" data-aos-delay="500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
 
                 </div>
                 <div class="col-md-6">
-                    <h4 class="mb-3" data-aos="flip-right">Can I change my plan later?</h4>
-                    <p class="light-font mb-5" data-aos="flip-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
-                    <h4 class="mb-3" data-aos="flip-right">Do you have a contract?</h4>
-                    <p class="light-font mb-5" data-aos="flip-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
+                    <h4 class="mb-3" data-aos="flip-right" data-aos-delay="700">Can I change my plan later?</h4>
+                    <p class="light-font mb-5" data-aos="flip-right" data-aos-delay="700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
+                    <h4 class="mb-3" data-aos="flip-right" data-aos-delay="900">Do you have a contract?</h4>
+                    <p class="light-font mb-5" data-aos="flip-right" data-aos-delay="900">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. </p>
 
                 </div>
             </div>
@@ -546,6 +542,59 @@ URI     : https://colorlib.com
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
 
+
+    <script>
+
+    // animate phone image
+    const phoneimg = {
+        threshold: 0.3
+    };
+
+    function animatePhone(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.classList.add('animate__animated', 'animate__fadeIn');
+            } else {
+                entry.target.style.opacity = 0;
+                entry.target.classList.remove('animate__animated', 'animate__fadeIn');
+            }
+
+        });
+    }
+
+    let phoneObserver = new IntersectionObserver(animatePhone, phoneimg);
+
+    let phone = document.querySelector('.phone-img');
+    phoneObserver.observe(phone);
+    
+    
+    // animate buttons
+    let options = {
+        threshold: 0.3
+    };
+
+    function animateButton(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.classList.add('animate__animated', 'animate__bounceIn');
+            } else {
+                entry.target.style.opacity = 0;
+                entry.target.classList.remove('animate__animated', 'animate__bounceIn');
+            }
+
+        });
+    }
+
+    let observer = new IntersectionObserver(animateButton, options);
+
+    let buttons = document.querySelectorAll('.btn-animate');
+    buttons.forEach(function(button) {
+        observer.observe(button);
+    });
+
+    </script>
 
 </body>
 
