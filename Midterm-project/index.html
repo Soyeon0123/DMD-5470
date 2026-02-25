@@ -118,7 +118,7 @@
 
       <div class="col-md-6 d-flex justify-content-md-center align-items-center">
 
-        <div class="mb-4 py-5">
+        <div class="mb-4 py-5 w-100">
           <h1 class="mb-5">What are benefits for using this?</h1>
           <div class="row g-4">
             <!--benefits cards -->
@@ -179,91 +179,141 @@
 <!-- Third Section: Design Token -->
 
 <section id="third">
-
   <div class="container">
-
     <div class="row">
       <div class="col-md-6 d-flex justify-content-md-center align-items-center">
-
-        <div class="mb-4 py-5">
+        <div class="mb-4 py-5 w-100">
           <h1>Design Tokens</h1>
           <p>Access all design components used in this project at once.</p>
 
-           <div class="row g-4">
+          <!-- Menus -->
+          <div class="design-token-tabs mb-4">
+            <button class="btn button-primary design-token-btn" data-target="colors">Colors</button>
+            <button class="btn button-primary design-token-btn" data-target="buttons">Buttons</button>
+            <button class="btn button-primary design-token-btn" data-target="typography">Typography</button>
+          </div>
+
+          <!-- Color Tokens -->
+          <div class="token-window active" id="colors">
+            <div class="row g-4">
               <div class="col-12 col-md-4 d-flex">
                 <div class="card w-100">
                   <div class="color-card" style="background: var(--primary-color);"></div>
-                    <div class="card-body">
-                      <h5 class="color-primary">--primary-color</h5>
-                      <p class="card-text">#282828</p>
-                    </div>
+                  <div class="card-body">
+                    <h5>--primary-color</h5>
+                    <p class="card-text">#282828</p>
+                  </div>
                 </div>
               </div>
-
               <div class="col-12 col-md-4 d-flex">
                 <div class="card w-100">
                   <div class="color-card" style="background: var(--secondary-color);"></div>
-                    <div class="card-body">
-                      <h5 class="color-secondary">--secondary-color</h5>
-                      <p class="card-text">#583c2b</p>
-                    </div>
+                  <div class="card-body">
+                    <h5>--secondary-color</h5>
+                    <p class="card-text">#583c2b</p>
+                  </div>
                 </div>
               </div>
-            
               <div class="col-12 col-md-4 d-flex">
                 <div class="card w-100">
                   <div class="color-card" style="background: var(--color-accent);"></div>
-                    <div class="card-body">
-                      <h5 class="color-accent">--color-accent</h5>
-                      <p class="card-text">#ae1a1b</p>
-                    </div>
+                  <div class="card-body">
+                    <h5>--color-accent</h5>
+                    <p class="card-text">#ae1a1b</p>
+                  </div>
                 </div>
               </div>
-
-
               <div class="col-12 col-md-4 d-flex">
                 <div class="card w-100">
                   <div class="color-card" style="background: var(--color-accent-secondary);"></div>
-                    <div class="card-body">
-                      <h5 class="color-accent-secondary">--color-accent-secondary</h5>
-                      <p class="card-text">#0042AF</p>
-                    </div>
+                  <div class="card-body">
+                    <h5>--color-accent-secondary</h5>
+                    <p class="card-text">#0042AF</p>
+                  </div>
                 </div>
               </div>
-
               <div class="col-12 col-md-4 d-flex">
                 <div class="card w-100">
                   <div class="color-card" style="background: var(--color-accent-gold);"></div>
-                    <div class="card-body">
-                      <h5 class="color-accent-gold">--color-accent-gold</h5>
-                      <p class="card-text">#fde488</p>
-                    </div>
+                  <div class="card-body">
+                    <h5>--color-accent-gold</h5>
+                    <p class="card-text">#e2c660</p>
+                  </div>
                 </div>
               </div>
-              
-
               <div class="col-12 col-md-4 d-flex">
                 <div class="card w-100">
                   <div class="color-card" style="background: var(--color-accent-green);"></div>
-                    <div class="card-body">
-                      <h5 class="color-accent-green">--color-accent-green</h5>
-                      <p class="card-text">#283618</p>
-                    </div>
+                  <div class="card-body">
+                    <h5>--color-accent-green</h5>
+                    <p class="card-text">#283618</p>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-            </div> 
+          <!-- Buttons -->
+          <div class="token-window" id="buttons">
+            <div class="row g-4">
+              <div class="col-12 col-md-6 d-flex">
+                <button class="btn button-primary w-100">Primary Button</button>
+              </div>
+              <div class="col-12 col-md-6 d-flex">
+                <button class="btn button-hover w-100">Hover Button</button>
+              </div>
+              <div class="col-12 col-md-6 d-flex">
+                <button class="btn button-reverse w-100">Reverse Button</button>
+              </div>
+            </div>
+          </div>
 
+          <!-- Typography -->
+          <div class="token-window" id="typography">
+            <div class="row g-4">
+              <div class="col-12 d-flex">
+                <div class="typo w-100">
+                  <span class="type-default">--font-size-xs<br>12px</span>
+                  <span class="type-sample" style="font-size: 12px;">Typography Sample</span>
+                </div>
+              </div>
+              <div class="col-12 d-flex">
+                <div class="typo w-100">
+                  <span class="type-default">--font-size-sm<br>14px</span>
+                  <span class="type-sample" style="font-size: 14px;">Typography Sample</span>
+                </div>
+              </div>
+              <div class="col-12 d-flex">
+                <div class="typo w-100">
+                  <span class="type-default">--font-size-md<br>16px</span>
+                  <span class="type-sample" style="font-size: 16px;">Typography Sample</span>
+                </div>
+              </div>
+              <div class="col-12 d-flex">
+                <div class="typo w-100">
+                  <span class="type-default">--font-size-lg<br>20px</span>
+                  <span class="type-sample" style="font-size: 20px;">Typography Sample</span>
+                </div>
+              </div>
+              <div class="col-12 d-flex">
+                <div class="typo w-100">
+                  <span class="type-default">--font-size-xl<br>28px</span>
+                  <span class="type-sample" style="font-size: 28px;">Typography Sample</span>
+                </div>
+              </div>
+              <div class="col-12 d-flex">
+                <div class="typo w-100">
+                  <span class="type-default">--font-size-2xl<br>40px</span>
+                  <span class="type-sample" style="font-size: 40px;">Typography Sample</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
-
-      </div> 
-
+      </div>
     </div>
-
-
   </div>
-
 
 </section>
 
@@ -283,32 +333,41 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magni officiis velit modi atque mollitia deserunt. Illo amet deserunt eum blanditiis excepturi ullam neque magnam temporibus pariatur! Ab, labore cumque?</p>
         </div>
 
-        <div class="demo-ui-window mb-5">
-          <h2 class="character-label">Nakai</h2>
-          <p class="dialogue-text">What will you choose?</p>
+        <!-- Window Option 1: Selection -->
+        <div class="demo-ui-window mb-5" id="selection-window">
+          <h2 class="character-label-01">Jang hyeong-du</h2>
+          <p class="choose-text">Name contains a lot of thing.</p>
 
           <div class="choices-button">
-            <button class="btn btn-outline-primary choice-btn">Accept his suggestion</button>
-            <button class="btn btn-outline-primary choice-btn">Decline his suggestion</button>
+            <button class="btn btn-outline-primary choice-btn">Korean name</button>
+            <button class="btn btn-outline-primary choice-btn">Japanese name</button>
+            <button class="btn btn-outline-primary choice-btn">Latin name</button>
           </div>
 
         </div>
 
-        <div class="demo-ui-window">
-          <h2 class="character-label">Nakai</h2>
+        <!-- Window Option 2: Dialogue Scene -->
+        <div class="demo-ui-window corner-accent mb-5" id="dialogue-window">
+          <h2 class="character-label-02">Nakai</h2>
           <p class="dialogue-text">Wait... who are you, miss?</p>
 
           <span class="next-arrow"></span>
 
         </div>
 
-
+        <!-- Window Option 3: Choose your name -->
+         <div class="demo-ui-window-02 justify-content-center align-items-center">
+          <h2 class="choose-log">Choose your name</h2>
+         </div>
 
       </div>
 
     </div>
 
   </div>
+  
+
+
 
 </section>
 
@@ -327,15 +386,16 @@
           <h1>Theme Transition Demo</h1>
           <p>Toggle under the three theme!</p>
 
-          <div class="theme-button-grp">
-            <button class="btn btn-outline-primary theme-button">Nakai-Theme</button>
-            <button class="btn btn-outline-secondary theme-button">Soyeon-Theme</button>
-            <button class="btn btn-light theme-button">Original-Theme</button>
+          <div class="theme-button-grp gap-2">
+            <button class="btn btn-outline-primary theme-button" data-theme-target="nakai">Nakai-Theme</button>
+            <button class="btn btn-outline-secondary theme-button" data-theme-target="soyeon">Soyeon-Theme</button>
+            <button class="btn btn-light theme-button" data-theme-target="original">Original-Theme</button>
+            <button class="btn btn-dark theme-button" data-theme-target="brown">Brown-Theme</button>
           </div>
         </div>
 
         <div class="theme-ui-window">
-          <h3 class="theme-ui-hero mb-5">Preview</h3>
+          <h3 class="theme-ui-hero">Preview</h3>
           <p>You can change various styles theme by choosing one theme above.</p>
         </div>
 
@@ -347,6 +407,111 @@
 
 
 </section>
+
+
+
+<!-- Bonus Section -->
+
+<section id="bonus">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-6 d-flex flex-column justify-content-md-center">
+
+        <div class="mb-4 py-5">
+          <h1>Bonus Section</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magni officiis velit modi atque mollitia deserunt. Illo amet deserunt eum blanditiis excepturi ullam neque magnam temporibus pariatur! Ab, labore cumque?</p>
+          <a href="fallback.html" class="btn button-primary">Do you have an issue?</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+// <!-- Design Tokens Tabs -->
+const tokenButtons = document.querySelectorAll('.design-token-btn');
+const tokenWindows = document.querySelectorAll('.token-window');
+
+tokenWindows.forEach(w => w.classList.remove('active'));
+document.getElementById('colors').classList.add('active');
+
+tokenButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target;
+    tokenWindows.forEach(w => w.classList.remove('active'));
+    document.getElementById(target).classList.add('active');
+  });
+});
+
+//Theme Transition
+
+const themeButtons = document.querySelectorAll('.theme-button');
+
+themeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const selectedTheme = btn.dataset.themeTarget;
+    document.body.setAttribute('data-theme', selectedTheme);
+    themeButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+
+// <!-- dialogue lines -->
+const dialogueLines = [
+{
+  character: "Nakai",
+  dialogue: "Wait... who are you, miss?"
+},
+{
+  character: "Soyeon",
+  dialogue: "Huh... where am I? I was just at Changdeokgung a moment ago..."
+},
+{
+  character: "Nakai",
+  dialogue: "This is 1900s. Back then I was studying plants in Joseon."
+},
+{
+  character: "Soyeon",
+  dialogue: "But... it's 2025 now."
+},
+{
+  character: "Nakai",
+  dialogue: "So you are... not Japanese, then."
+},
+{
+  character: "Soyeon",
+  dialogue: "Who is this man?"
+}
+];
+
+let currentLine = 0;
+
+function render(idx) {
+  const line = dialogueLines[idx];
+  document.querySelector('.character-label-02').textContent = line.character;
+  document.querySelector('.dialogue-text').textContent = line.dialogue;
+}
+
+function nextLine() {
+  currentLine = (currentLine + 1) % dialogueLines.length;
+  render(currentLine);
+}
+
+document.querySelector('#dialogue-window').addEventListener('click', nextLine);
+
+render(0);
+
+</script>
+
 
  <script src="js/app.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
