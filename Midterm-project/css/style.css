@@ -344,7 +344,17 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
+.code-window{
+  background-color: #2d2d2d;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+}
 
+.code-window pre{
+  margin: 0;
+  overflow-x: auto;
+  height: 100%;
+}
 
 
 /* Section Base */
@@ -415,6 +425,33 @@ section{
   padding:30px;
   position: relative;
 }
+
+.next-arrow{
+  background-image: var(--basic-arrow);
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  cursor:pointer;
+  animation: arrowPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+}
+
 
 .demo-ui-window-02{
   background-image: var(--paper-tex-css-1);

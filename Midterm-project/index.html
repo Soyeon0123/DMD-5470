@@ -8,6 +8,7 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
 
@@ -31,80 +32,112 @@
 <body>
 
 <!-- First section: How to Use? -->
-
 <section id="first">
-
   <div class="container">
 
+    <!-- First row: Title & Explain -->
     <div class="row">
-
-      <div class="col-md-6 col-lg-7 d-flex flex-column justify-content-md-center align-items-center">
-
-        <div class="mb-4 py-5">
-          <h1> CSS custom properties</h1>
-          <p class="mb-5">CSS custom properties are entities that you can define your customized design systems including layout, design tokens, colors, and other visual elements for reusing in your web design.</p>
-          
-          
-          <h2 class="mb-5"> How to Use?</h2>
-          <div class="row g-4">
-            <!-- steps cards -->
-             <div class="col-sm-6 col-lg-6 d-flex">
-
-              <div class="card mb-4 feature-card w-100">
-                <div class="card-body">
-                  <h3 class="card-title gap-3">Step 1</h3>
-                  <h4>Declare Function in :root</h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos et doloribus? Voluptates, id perferendis eos incidunt laboriosam animi neque quasi officia sequi rerum dolorum delectus ea minus, error veritatis.</p>
-                </div>
-              </div>
-
-             </div>
-
-              <div class="col-sm-6 col-lg-6 d-flex">
-
-              <div class="card mb-4 feature-card w-100">
-                <div class="card-body">
-                  <h3 class="card-title gap-3">Step 2</h3>
-                  <h4>Use var()</h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos et doloribus? Voluptates, id perferendis eos incidunt laboriosam animi neque quasi officia sequi rerum dolorum delectus ea minus, error veritatis.</p>
-                </div>
-              </div>
-
-             </div>
-
-              <div class="col-sm-6 col-lg-6 d-flex">
-
-              <div class="card mb-4 feature-card w-100">
-                <div class="card-body">
-                  <h3 class="card-title gap-3">Step 3</h3>
-                  <h4>Override variables</h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos et doloribus? Voluptates, id perferendis eos incidunt laboriosam animi neque quasi officia sequi rerum dolorum delectus ea minus, error veritatis.</p>
-                </div>
-              </div>
-
-             </div>
-
-              <div class="col-sm-6 col-lg-6 d-flex">
-
-              <div class="card mb-4 feature-card w-100">
-                <div class="card-body">
-                  <h3 class="card-title gap-3">Step 4</h3>
-                  <h4>Naming Convention</h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quos et doloribus? Voluptates, id perferendis eos incidunt laboriosam animi neque quasi officia sequi rerum dolorum delectus ea minus, error veritatis.</p>
-                </div>
-              </div>
-
-             </div>
-
-
-
-          </div>
-
-        </div>
+      <div class="col-12 py-5">
+        <h1>CSS custom properties</h1>
+        <p class="mb-5">CSS custom properties are entities that you can define your customized design systems including layout, design tokens, colors, and other visual elements for reusing in your web design.</p>
+        <h2 class="mb-3">How to Use?</h2>
       </div>
     </div>
-  </div>
 
+    <!-- Second row: Cards and Code Window -->
+    <div class="row g-4 pb-5">
+
+      <!-- Cards -->
+      <div class="col-12 col-md-6">
+        <div class="row g-4">
+          <div class="col-6">
+            <div class="card feature-card h-100">
+              <div class="card-body">
+                <h3>Step 1</h3>
+                <h4>Declare Function in :root</h4>
+                <p class="card-text">Use a prefix of two dashes (--) followed by a name for your custom property.
+                  Custom properties can be referenced globally (:root) pseudo-class.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card feature-card h-100">
+              <div class="card-body">
+                <h3>Step 2</h3>
+                <h4>Use var()</h4>
+                <p class="card-text">Use the var() function to reference a CSS custom property value in your styles.
+                  The var() fuction is using only for property values not for property names or selectors.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card feature-card h-100">
+              <div class="card-body">
+                <h3>Step 3</h3>
+                <h4>Override variables</h4>
+                <p class="card-text">You can override CSS custom properties in a specific scope (e.g., a class or element) by redeclaring them.</p>
+              </div>
+              <pre><code class="language-css">
+:root {
+--main-color: blue;
+}
+
+.card{
+--main-color: red;
+}
+</code></pre>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card feature-card h-100">
+              <div class="card-body">
+                <h3>Step 4</h3>
+                <h4>Naming Convention</h4>
+                <p class="card-text">Custom properties' names are case sensitive. (e.g., --main-color is different from --Main-Color)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Window -->
+      <div class="col-12 col-md-6">
+        <div class="code-window h-100">
+<pre><code class="language-css">:root {
+  --bg-color:#ece4da;
+  --primary-color: #282828;
+  --secondary-color: #583c2b;
+  --color-text: #282828;
+  --color-text-secondary: #583c2b;
+  --color-accent: #ae1a1b;
+  --color-accent-secondary: #0042AF;
+  --color-accent-gold: #e2c660;
+  --color-accent-green: #283618;
+  --color-text-muted: #7a6e62;
+}
+
+  .button-reverse {
+    background-color: var(--bg-color);
+    background-size: 50%;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: background-color 0.3s ease, 
+    color 0.3s ease;
+  }
+
+</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </section>
 
@@ -116,7 +149,7 @@
 
     <div class="row">
 
-      <div class="col-md-6 d-flex justify-content-md-center align-items-center">
+      <div class="col-12 d-flex justify-content-md-center align-items-center">
 
         <div class="mb-4 py-5 w-100">
           <h1 class="mb-5">What are benefits for using this?</h1>
@@ -192,127 +225,152 @@
             <button class="btn button-primary design-token-btn" data-target="buttons">Buttons</button>
             <button class="btn button-primary design-token-btn" data-target="typography">Typography</button>
           </div>
-
-          <!-- Color Tokens -->
-          <div class="token-window active" id="colors">
-            <div class="row g-4">
-              <div class="col-12 col-md-4 d-flex">
-                <div class="card w-100">
-                  <div class="color-card" style="background: var(--primary-color);"></div>
-                  <div class="card-body">
-                    <h5>--primary-color</h5>
-                    <p class="card-text">#282828</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 d-flex">
-                <div class="card w-100">
-                  <div class="color-card" style="background: var(--secondary-color);"></div>
-                  <div class="card-body">
-                    <h5>--secondary-color</h5>
-                    <p class="card-text">#583c2b</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 d-flex">
-                <div class="card w-100">
-                  <div class="color-card" style="background: var(--color-accent);"></div>
-                  <div class="card-body">
-                    <h5>--color-accent</h5>
-                    <p class="card-text">#ae1a1b</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 d-flex">
-                <div class="card w-100">
-                  <div class="color-card" style="background: var(--color-accent-secondary);"></div>
-                  <div class="card-body">
-                    <h5>--color-accent-secondary</h5>
-                    <p class="card-text">#0042AF</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 d-flex">
-                <div class="card w-100">
-                  <div class="color-card" style="background: var(--color-accent-gold);"></div>
-                  <div class="card-body">
-                    <h5>--color-accent-gold</h5>
-                    <p class="card-text">#e2c660</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 d-flex">
-                <div class="card w-100">
-                  <div class="color-card" style="background: var(--color-accent-green);"></div>
-                  <div class="card-body">
-                    <h5>--color-accent-green</h5>
-                    <p class="card-text">#283618</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Buttons -->
-          <div class="token-window" id="buttons">
-            <div class="row g-4">
-              <div class="col-12 col-md-6 d-flex">
-                <button class="btn button-primary w-100">Primary Button</button>
-              </div>
-              <div class="col-12 col-md-6 d-flex">
-                <button class="btn button-hover w-100">Hover Button</button>
-              </div>
-              <div class="col-12 col-md-6 d-flex">
-                <button class="btn button-reverse w-100">Reverse Button</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Typography -->
-          <div class="token-window" id="typography">
-            <div class="row g-4">
-              <div class="col-12 d-flex">
-                <div class="typo w-100">
-                  <span class="type-default">--font-size-xs<br>12px</span>
-                  <span class="type-sample" style="font-size: 12px;">Typography Sample</span>
-                </div>
-              </div>
-              <div class="col-12 d-flex">
-                <div class="typo w-100">
-                  <span class="type-default">--font-size-sm<br>14px</span>
-                  <span class="type-sample" style="font-size: 14px;">Typography Sample</span>
-                </div>
-              </div>
-              <div class="col-12 d-flex">
-                <div class="typo w-100">
-                  <span class="type-default">--font-size-md<br>16px</span>
-                  <span class="type-sample" style="font-size: 16px;">Typography Sample</span>
-                </div>
-              </div>
-              <div class="col-12 d-flex">
-                <div class="typo w-100">
-                  <span class="type-default">--font-size-lg<br>20px</span>
-                  <span class="type-sample" style="font-size: 20px;">Typography Sample</span>
-                </div>
-              </div>
-              <div class="col-12 d-flex">
-                <div class="typo w-100">
-                  <span class="type-default">--font-size-xl<br>28px</span>
-                  <span class="type-sample" style="font-size: 28px;">Typography Sample</span>
-                </div>
-              </div>
-              <div class="col-12 d-flex">
-                <div class="typo w-100">
-                  <span class="type-default">--font-size-2xl<br>40px</span>
-                  <span class="type-sample" style="font-size: 40px;">Typography Sample</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
+
+
+    <div class="row g-4 pb-5">
+      <div class="col-12 col-md-6">
+            <!-- Color Tokens -->
+            <div class="token-window active" id="colors">
+              <div class="row g-4">
+                <div class="col-12 col-md-4 d-flex">
+                  <div class="card w-100">
+                    <div class="color-card" style="background: var(--primary-color);"></div>
+                    <div class="card-body">
+                      <h5>--primary-color</h5>
+                      <p class="card-text">#282828</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex">
+                  <div class="card w-100">
+                    <div class="color-card" style="background: var(--secondary-color);"></div>
+                    <div class="card-body">
+                      <h5>--secondary-color</h5>
+                      <p class="card-text">#583c2b</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex">
+                  <div class="card w-100">
+                    <div class="color-card" style="background: var(--color-accent);"></div>
+                    <div class="card-body">
+                      <h5>--color-accent</h5>
+                      <p class="card-text">#ae1a1b</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex">
+                  <div class="card w-100">
+                    <div class="color-card" style="background: var(--color-accent-secondary);"></div>
+                    <div class="card-body">
+                      <h5>--color-accent-secondary</h5>
+                      <p class="card-text">#0042AF</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex">
+                  <div class="card w-100">
+                    <div class="color-card" style="background: var(--color-accent-gold);"></div>
+                    <div class="card-body">
+                      <h5>--color-accent-gold</h5>
+                      <p class="card-text">#e2c660</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex">
+                  <div class="card w-100">
+                    <div class="color-card" style="background: var(--color-accent-green);"></div>
+                    <div class="card-body">
+                      <h5>--color-accent-green</h5>
+                      <p class="card-text">#283618</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="token-window" id="buttons">
+              <div class="row g-4">
+                <div class="col-12 col-md-6 d-flex">
+                  <button class="btn button-primary w-100">Primary Button</button>
+                </div>
+                <div class="col-12 col-md-6 d-flex">
+                  <button class="btn button-hover w-100">Hover Button</button>
+                </div>
+                <div class="col-12 col-md-6 d-flex">
+                  <button class="btn button-reverse w-100">Reverse Button</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Typography -->
+            <div class="token-window" id="typography">
+              <div class="row g-4">
+                <div class="col-12 d-flex">
+                  <div class="typo w-100">
+                    <span class="type-default">--font-size-xs<br>12px</span>
+                    <span class="type-sample" style="font-size: 12px;">Typography Sample</span>
+                  </div>
+                </div>
+                <div class="col-12 d-flex">
+                  <div class="typo w-100">
+                    <span class="type-default">--font-size-sm<br>14px</span>
+                    <span class="type-sample" style="font-size: 14px;">Typography Sample</span>
+                  </div>
+                </div>
+                <div class="col-12 d-flex">
+                  <div class="typo w-100">
+                    <span class="type-default">--font-size-md<br>16px</span>
+                    <span class="type-sample" style="font-size: 16px;">Typography Sample</span>
+                  </div>
+                </div>
+                <div class="col-12 d-flex">
+                  <div class="typo w-100">
+                    <span class="type-default">--font-size-lg<br>20px</span>
+                    <span class="type-sample" style="font-size: 20px;">Typography Sample</span>
+                  </div>
+                </div>
+                <div class="col-12 d-flex">
+                  <div class="typo w-100">
+                    <span class="type-default">--font-size-xl<br>28px</span>
+                    <span class="type-sample" style="font-size: 28px;">Typography Sample</span>
+                  </div>
+                </div>
+                <div class="col-12 d-flex">
+                  <div class="typo w-100">
+                    <span class="type-default">--font-size-2xl<br>40px</span>
+                    <span class="type-sample" style="font-size: 40px;">Typography Sample</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+          
+        <!-- Code-Window -->
+        <div class="col-12 col-md-6">
+          <div class="code-window h-100">
+                <pre><code class="language-css" id="design-token-code">:root {
+--primary-color: #282828;
+--secondary-color: #583c2b;
+--color-accent: #ae1a1b;
+--color-accent-gold: #e2c660;
+--font-size-xs: 12px;
+--font-size-md: 16px;
+--font-size-xl: 28px;
+                }</code></pre>
+          </div>
+        </div>
+
+
+    
+    </div>
+
   </div>
 
 </section>
@@ -325,51 +383,82 @@
   <div class="container">
 
       <div class="row">
-
-      <div class="col-md-6 d-flex flex-column justify-content-md-center">
-
-        <div class="mb-4 py-5">
-          <h1>UI Window</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magni officiis velit modi atque mollitia deserunt. Illo amet deserunt eum blanditiis excepturi ullam neque magnam temporibus pariatur! Ab, labore cumque?</p>
+        <div class="col-12 d-flex flex-column justify-content-md-center">
+          <div class="mb-4 py-5">
+            <h1>UI Window</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magni officiis velit modi atque mollitia deserunt. Illo amet deserunt eum blanditiis excepturi ullam neque magnam temporibus pariatur! Ab, labore cumque?</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Window Option 1: Selection -->
-        <div class="demo-ui-window mb-5" id="selection-window">
-          <h2 class="character-label-01">Jang hyeong-du</h2>
-          <p class="choose-text">Name contains a lot of thing.</p>
+      <div class="row g-4 pb-5">
+        <div class="col-12 col-md-6">
+          <!-- Window Option 1: Selection -->
+          <div class="demo-ui-window mb-5" id="selection-window">
+            <h2 class="character-label-01">Jang hyeong-du</h2>
+            <p class="choose-text">Name contains a lot of thing.</p>
 
-          <div class="choices-button">
-            <button class="btn btn-outline-primary choice-btn">Korean name</button>
-            <button class="btn btn-outline-primary choice-btn">Japanese name</button>
-            <button class="btn btn-outline-primary choice-btn">Latin name</button>
+            <div class="choices-button">
+              <button class="btn btn-outline-primary choice-btn">Korean name</button>
+              <button class="btn btn-outline-primary choice-btn">Japanese name</button>
+              <button class="btn btn-outline-primary choice-btn">Latin name</button>
+            </div>
+
           </div>
 
+          <!-- Window Option 2: Dialogue Scene -->
+          <div class="demo-ui-window corner-accent mb-5" id="dialogue-window">
+            <h2 class="character-label-02">Nakai</h2>
+            <p class="dialogue-text">Wait... who are you, miss?</p>
+
+            <span class="next-arrow"></span>
+
+          </div>
+
+          <!-- Window Option 3: Choose your name -->
+          <div class="demo-ui-window-02 justify-content-center align-items-center">
+            <h2 class="choose-log">Choose your name</h2>
+          </div>
         </div>
 
-        <!-- Window Option 2: Dialogue Scene -->
-        <div class="demo-ui-window corner-accent mb-5" id="dialogue-window">
-          <h2 class="character-label-02">Nakai</h2>
-          <p class="dialogue-text">Wait... who are you, miss?</p>
+        <!-- Code-Window -->
+        <div class="col-12 col-md-6">
+          <div class="code-window h-100">
+                <pre><code class="language-css">.demo-ui-window{
+  background-image: var(--paper-tex-bg-3);
+  width: 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 200px;
+  border: 2px solid var(--color-text-muted);
+  border-radius: var(--border-radius-md);
+  padding:30px;
+  position: relative;
+}
 
-          <span class="next-arrow"></span>
-
+.demo-ui-window-02{
+  background-image: var(--paper-tex-css-1);
+  width: 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 200px;
+  border-radius: 16px;
+  padding:30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+} </code></pre>
+          </div>
         </div>
-
-        <!-- Window Option 3: Choose your name -->
-         <div class="demo-ui-window-02 justify-content-center align-items-center">
-          <h2 class="choose-log">Choose your name</h2>
-         </div>
 
       </div>
 
-    </div>
+    
 
   </div>
-  
-
-
 
 </section>
+
 
 <!-- Fifth Section: Theme transition demo -->
 
@@ -380,7 +469,7 @@
 
     <div class="row">
 
-      <div class="col-md-6 d-flex flex-column justify-content-md-center">
+      <div class="col-12 col-md-6">
 
         <div class="mb-4 py-5">
           <h1>Theme Transition Demo</h1>
@@ -400,6 +489,21 @@
         </div>
 
       </div>
+      
+        <!-- Code-Window -->
+        <div class="col-12 col-md-6">
+          <div class="code-window h-100">
+                <pre><code class="language-css" id="theme-code">:root {
+--primary-color: #282828;
+--secondary-color: #583c2b;
+--color-accent: #ae1a1b;
+--color-accent-gold: #e2c660;
+--font-size-xs: 12px;
+--font-size-md: 16px;
+--font-size-xl: 28px;
+                }</code></pre>
+          </div>
+        </div>
 
     </div>
 
@@ -418,7 +522,7 @@
 
     <div class="row">
 
-      <div class="col-md-6 d-flex flex-column justify-content-md-center">
+      <div class="col-12 d-flex flex-column justify-content-md-center">
 
         <div class="mb-4 py-5">
           <h1>Bonus Section</h1>
@@ -451,6 +555,109 @@ tokenButtons.forEach(btn => {
   });
 });
 
+// Design Tokens Code
+
+const tokenCodes = {
+  colors: `:root {
+  --bg-color:#ece4da;
+  --primary-color: #282828;
+  --secondary-color: #583c2b;
+  --color-text: #282828;
+  --color-text-secondary: #583c2b;
+  --color-accent: #ae1a1b;
+  --color-accent-secondary: #0042AF;
+  --color-accent-gold: #e2c660;
+  --color-accent-green: #283618;
+  --color-text-muted: #7a6e62;
+}`,
+buttons: ` .button-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}`,
+  typography: `:root {
+ --font-heading: 'Operetta', serif;
+  --font-body: 'Steradian', sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 40px;
+}`
+};
+
+tokenButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target;
+    tokenWindows.forEach(w => w.classList.remove('active'));
+    document.getElementById(target).classList.add('active');
+
+    const codeElement = document.getElementById('design-token-code');
+    codeElement.textContent = tokenCodes[target];
+    Prism.highlightElement(codeElement);
+  });
+});
+
+
+
+
+// Theme Transition Code
+
+const themeCodes = {
+  nakai: `[data-theme="nakai"]{
+    --bg-color:#1a1210;
+    --primary-color: #e8dcc8;
+    --secondary-color: #c9b99a;
+    --color-text: #e8dcc8;
+    --color-text-secondary: #c9b99a;
+    --color-accent: #ae1a1b;
+    --color-text-muted: #8a7a6e;
+    --corner-color: #ae1a1b;
+  }`,
+
+  soyeon: `[data-theme="soyeon"]{
+    --bg-color:#e8ede4;
+    --primary-color: #1a2e12;
+    --secondary-color: #2d4a20;
+    --color-text: #1a2e12;
+    --color-text-secondary: #2d4a20;
+    --color-accent: #283618;
+    --color-text-muted: #6a7e62;
+    --corner-color: #5a8a3c;
+  }`,
+
+  original: `[data-theme="original"]{
+    --bg-color:#f5f5f5;
+    --primary-color: #111111;
+    --secondary-color: #444444;
+    --color-text: #111111;
+    --color-text-secondary: #444444;
+    --color-accent: #111111;
+    --color-text-muted: #888888;
+    --corner-color: #111111;
+  }`,
+
+  brown: `[data-theme="brown"]{
+    --bg-color:#ece4da;
+    --primary-color: #282828;
+    --secondary-color: #583c2b;
+    --color-text: #28282b;
+    --color-text-secondary: #583c2b;
+    --color-accent: #282828;
+    --color-text-muted: #7a6e62;
+    --corner-color: #e2c660;
+  }`
+};
+
+
+
 //Theme Transition
 
 const themeButtons = document.querySelectorAll('.theme-button');
@@ -461,8 +668,15 @@ themeButtons.forEach(btn => {
     document.body.setAttribute('data-theme', selectedTheme);
     themeButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
+    const codeElement = document.getElementById('theme-code');
+    codeElement.textContent = themeCodes[selectedTheme];
+    Prism.highlightElement(codeElement);
   });
 });
+
+
+
 
 
 // <!-- dialogue lines -->
@@ -512,7 +726,7 @@ render(0);
 
 </script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
  <script src="js/app.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
