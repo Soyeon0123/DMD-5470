@@ -37,7 +37,8 @@
         <div class="row">
             <div class="col-12 py-5">
                 <h2 class="mb-4">Fallback Methods</h2>
-                <p>When CSS custom properties are not supported, fallback values can be defined using the `var()` function with a fallback value.</p>
+                <p>When using CSS custom properties, you can define a fallback value inside the var() function. 
+                    The fallback value will be used if the custom property is not available or cannot be resolved.</p>
             </div>
         </div>
 
@@ -47,9 +48,9 @@
                     <div class="col-12">
                         <div class="card feature-card h-100">
                         <div class="card-body">
-                            <h3>Case1</h3>
-                            <h4>If the value is not declared</h4>
-                            <p class="card-text">If a CSS custom property is not declared, the fallback value is used instead.</p>
+                            <h3>Use Case 1</h3>
+                            <h4>Variable is not declared</h4>
+                            <p class="card-text">If a CSS custom property has not been defined anywhere in the stylesheet, the fallback value will be used.</p>
                         </div>
                         </div>
                     </div>
@@ -57,9 +58,9 @@
                     <div class="col-12">
                         <div class="card feature-card h-100">
                         <div class="card-body">
-                            <h3>Case2</h3>
-                            <h4>Use invaluable properties</h4>
-                            <p class="card-text">The fallback value is used if the CSS custom property is not defined.</p>
+                            <h3>Use Case 2</h3>
+                            <h4>Variable value is invalid</h4>
+                            <p class="card-text">Fallback values are also used when the custom property's value cannot be applied to the CSS property.</p>
                         </div>
                         </div>
                     </div>
@@ -69,7 +70,11 @@
     <!-- Code Window -->
     <div class="col-12 col-md-6">
         <div class="code-window h-100">
-<pre><code class="language-css"> padding-bottom: var(--spacing-xs) var(--spacing-sm);</code></pre>
+<pre><code class="language-css"> var( --primary-color, black);
+
+//If --primary-color is not defined, 
+the browser will use black instead.//
+</code></pre>
         </div>
     </div>
                     
@@ -124,7 +129,8 @@
 
                             <div class="col-12 col-md-6">
                                 <h3>Texture & Icon</h3>
-                                <p class="card-text">Basic Textures by CSS and most of textures and icon are created by Soyeon.</p>
+                                <p class="card-text">Basic texture created using native CSS features.
+                                    Additional icons and textures were designed and created by Soyeon Lee.</p>
                             </div>
 
                         </div>
@@ -148,14 +154,18 @@
     <div class="container">
         <div class=" row">
             <div class="col-12 py-5">
-                <h2 class="mb-4">Browser Support</h2>
+                <h2 class="mb-4">Browser Support for CSS Custom Properties</h2>
 
                 <div class="card browser-support-card">
                     <div class="card-body p-4">
-                        <h3>Browser Support for CSS Custom Properties</h3>
-                        <p class="card-text">CSS custom properties are widely supported across modern browsers, including Chrome, Firefox, Safari, and Edge. 
-                            However, older versions of Internet Explorer do not support CSS custom properties. In this case, you will need to provide fallback values or use alternative methods for styling.
-                            Check out for browser support details on <a href="https://caniuse.com/css-variables">Can I Use - CSS Variables</a>.
+                        <p class="card-text">CSS custom properties are widely supported across modern browsers, including Chrome, Firefox, Safari, and Microsoft Edge. 
+                            However, Internet Explorer does not support CSS custom properties.
+                            For projects that must support older browsers, developers may need to provide fallback values or alternative styling approaches.
+                            
+                            <p class="mb-3">You can check detailed browser compatibility on</p>
+                            <div class="col-12 d-flex flex-column "><iframe src="https://caniuse.bitsofco.de/embed/index.html?feat=css-variables&periods=future_1,current,past_1,past_2&accessible-colours=false&image-base=none"
+  title="CanIUse embed for css-variables" id="caniuse-iframe"
+  style="width: 100%; height: 520px; border: none; display: block;"></iframe></div>
                         </p>
                     </div>
                 </div>
@@ -178,8 +188,8 @@
       <div class="col-md-6 d-flex flex-column justify-content-md-center">
 
         <div class="mb-4 py-5">
-          <h1>previous-demo</h1>
-          <p>Do you want to go back to the main page?</p>
+          <h1>Previous Demo</h1>
+          <p>Would you like to return to the main page?</p>
           <a href="index.html" class="btn button-primary">Go Back to Main Page</a>
         </div>
 
@@ -191,7 +201,20 @@
 
 </section>
 
+<script>
+  function adjustIframeHeight() {
+    const iframe = document.getElementById('caniuse-iframe');
+    if (window.innerWidth >= 992) {
+      iframe.style.height = '380px';  // PC
+    } else {
+      iframe.style.height = '520px';  // Mobile
+    }
+  }
 
+
+  adjustIframeHeight();
+  window.addEventListener('resize', adjustIframeHeight);
+  </script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
  <script src="js/app.js"></script>

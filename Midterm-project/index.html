@@ -38,9 +38,12 @@
     <!-- First row: Title & Explain -->
     <div class="row">
       <div class="col-12 py-5">
-        <h1>CSS custom properties</h1>
-        <p class="mb-5">CSS custom properties are entities that you can define your customized design systems including layout, design tokens, colors, and other visual elements for reusing in your web design.</p>
-        <h2 class="mb-3">How to Use?</h2>
+        <h1>CSS Custom Properties (CSS Variables)</h1>
+        <p class="mb-2">CSS Custom Properties, also known as CSS Variables, are reusable values defined in a CSS document that can be referenced throughout a stylesheet to simplify styling and improve maintainability.
+          By defining a value once and reusing it throughout a stylesheet, 
+          developers can manage design elements more efficiently.</p>
+        <p class="mb-5">CSS variables can store many types of values such as colors, spacing, layout values, or design tokens used in web interfaces.</p>
+        <h2 class="mb-3">How to Use CSS Variables</h2>
       </div>
     </div>
 
@@ -48,36 +51,41 @@
     <div class="row g-4 pb-5">
 
       <!-- Cards -->
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-xl-6">
         <div class="row g-4">
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <div class="card feature-card h-100">
               <div class="card-body">
                 <h3>Step 1</h3>
-                <h4>Declare Function in :root</h4>
-                <p class="card-text">Use a prefix of two dashes (--) followed by a name for your custom property.
-                  Custom properties can be referenced globally (:root) pseudo-class.
+                <h4>Declare variables in :root</h4>
+                <p class="card-text">To define a CSS custom property, use the double hyphen (--) prefix before the variable name. 
+                  Custom properties follow the cascade and inheritance rules of CSS, meaning they can inherit values from parent elements.
+                  Variables are commonly declared inside the :root pseudo-class, which represents the root element of the document. 
+                  Variables defined in :root become global variables and can be accessed from anywhere in the stylesheet.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <div class="card feature-card h-100">
               <div class="card-body">
                 <h3>Step 2</h3>
-                <h4>Use var()</h4>
-                <p class="card-text">Use the var() function to reference a CSS custom property value in your styles.
-                  The var() fuction is using only for property values not for property names or selectors.
+                <h4>Use the var() function</h4>
+                <p class="card-text">After defining custom variables, you can reference them using the var() function.
+                  The var() function inserts the value of a custom property into a CSS property. It can only be used inside property values, not in property names or selectors.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <div class="card feature-card h-100">
               <div class="card-body">
                 <h3>Step 3</h3>
                 <h4>Override variables</h4>
-                <p class="card-text">You can override CSS custom properties in a specific scope (e.g., a class or element) by redeclaring them.</p>
+                <p class="card-text">CSS variables can be redefined within a specific scope, such as inside a class or element selector. 
+                  Because CSS variables follow the cascade and inheritance model, redefining a variable locally overrides its value only within that scope.
+                  This allows different sections or themes of a website to use different values while keeping the same variable name.
+                </p>
               </div>
               <pre><code class="language-css">
 :root {
@@ -90,22 +98,41 @@
 </code></pre>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-12 col-sm-6">
             <div class="card feature-card h-100">
               <div class="card-body">
                 <h3>Step 4</h3>
-                <h4>Naming Convention</h4>
-                <p class="card-text">Custom properties' names are case sensitive. (e.g., --main-color is different from --Main-Color)</p>
+                <h4>Naming conventions</h4>
+                <p class="card-text">CSS custom property names may include letters, numbers, hyphens, and underscores, but they cannot contain spaces.
+                  They are also case-sensitive. Example:</p>
+                <pre><code>
+--main-color
+--Main-color
+                </code></pre>
+                These two variables are treated as different properties.
+                Using descriptive names improves readability and makes stylesheets easier to maintain. For example:
+                <pre><code>
+--Primary-color
+                </code></pre>
+                is easier to understand than directly using:
+                <pre><code>
+#ffffff
+                </code></pre>
+              
               </div>
+            
             </div>
           </div>
         </div>
       </div>
 
       <!-- Code Window -->
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-xl-6">
         <div class="code-window h-100">
-<pre><code class="language-css">:root {
+<pre><code class="language-css">/* Define variables in :root */
+
+  :root {
+  /* Color Tokens */
   --bg-color:#ece4da;
   --primary-color: #282828;
   --secondary-color: #583c2b;
@@ -116,7 +143,15 @@
   --color-accent-gold: #e2c660;
   --color-accent-green: #283618;
   --color-text-muted: #7a6e62;
+
+  /* Paper Textures */
+  --paper-tex-bg: url(../img/Paper_tex_01.png);
+  --paper-tex-bg-2: url(../img/Paper_tex_2.png);
+  --paper-tex-bg-3: url(../img/Paper_tex_3.png);
 }
+
+
+/* Reference custom variables */
 
   .button-reverse {
     background-color: var(--bg-color);
@@ -130,6 +165,18 @@
     cursor: pointer;
     transition: background-color 0.3s ease, 
     color 0.3s ease;
+  }
+
+  .demo-ui-window{
+    background-image: var(--paper-tex-bg-3);
+    width: 100%;
+    background-size: cover;
+    background-repeat: repeat;
+    min-height: 200px;
+    border: 2px solid var(--color-text-muted);
+    border-radius: var(--border-radius-md);
+    padding:30px;
+    position: relative;
   }
 
 </code></pre>
@@ -152,14 +199,14 @@
       <div class="col-12 d-flex justify-content-md-center align-items-center">
 
         <div class="mb-4 py-5 w-100">
-          <h1 class="mb-5">What are benefits for using this?</h1>
+          <h1 class="mb-5">Benefits of Using CSS Variables</h1>
           <div class="row g-4">
             <!--benefits cards -->
             <div class="col-sm-6 col-lg-6 d-flex">
               <div class="card mb-4 feature-card w-100">
                 <div class="card-body">
-                  <h3 class="card-title">1. Easy to replace & change</h3>
-                  <p class="card-text">You can reference the value that was defined in one place in multiple places.</p>
+                  <h3 class="card-title">1. Easy to update and maintain</h3>
+                  <p class="card-text">Values defined once can be reused throughout the stylesheet. Updating a variable automatically updates every place where it is used.</p>
                 </div>
               </div>
             </div>
@@ -167,8 +214,9 @@
             <div class="col-12 col-sm-6 col-lg-6 d-flex">
               <div class="card mb-4 feature-card w-100">
                 <div class="card-body">
-                  <h3 class="card-title">2. Enhance readability & semantics</h3>
-                  <p class="card-text">Color is used in different context.</p>
+                  <h3 class="card-title">2. Improved readability and semantics</h3>
+                  <p class="card-text">Meaningful variable names make stylesheets easier to understand and maintain. 
+                    Instead of repeating raw values like hex colors, variables communicate the purpose of the value.</p>
                 </div>
               </div>
             </div>
@@ -177,17 +225,38 @@
               <div class="card mb-4 feature-card w-100">
                 <div class="card-body">
                   <h3 class="card-title">3. Theming</h3>
-                  <p class="card-text">You can reference the value that was defined in one place in multiple places.</p>
+                  <p class="card-text"> CSS variables make it easy to implement theme switching (such as light and dark modes). 
+                    Changing a few variable values can update the entire appearance of a site.
+                    This page demonstrates theme switching using the buttons below.</p>
                 </div>
+                <pre><code class="language-css" id="theme-code">[data-theme="brown"]{
+    --bg-color:#ece4da;
+    --primary-color: #282828;
+    --secondary-color: #583c2b;
+    --color-text: #28282b;
+    --color-text-secondary: #583c2b;
+    --color-accent: #282828;
+    --color-text-muted: #7a6e62;
+    --corner-color: #e2c660;
+  }</code></pre>
               </div>
             </div>
 
             <div class="col-sm-6 col-lg-6 d-flex">
               <div class="card mb-4 feature-card w-100">
                 <div class="card-body">
-                  <h3 class="card-title">4. Responsiveness</h3>
-                  <p class="card-text">You can reference the value that was defined in one place in multiple places.</p>
+                  <h3 class="card-title">4. Responsive design</h3>
+                  <p class="card-text">CSS variables can be combined with media queries to adjust values based on screen size or device conditions.
+                    This allows styles to adapt dynamically across different screen sizes.
+                  </p>
                 </div>
+                <pre><code class="language-css">
+@media (max-width: 768px) {
+  :root {
+    --spacing-unit: 12px;
+  }
+}
+</code></pre>
               </div>
             </div>
 
@@ -214,10 +283,10 @@
 <section id="third">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 d-flex justify-content-md-center align-items-center">
+      <div class="col-12 d-flex justify-content-md-center align-items-center">
         <div class="mb-4 py-5 w-100">
           <h1>Design Tokens</h1>
-          <p>Access all design components used in this project at once.</p>
+          <p>Access the core design tokens used in this project, including colors, buttons, and typography.</p>
 
           <!-- Menus -->
           <div class="design-token-tabs mb-4">
@@ -355,15 +424,7 @@
         <!-- Code-Window -->
         <div class="col-12 col-md-6">
           <div class="code-window h-100">
-                <pre><code class="language-css" id="design-token-code">:root {
---primary-color: #282828;
---secondary-color: #583c2b;
---color-accent: #ae1a1b;
---color-accent-gold: #e2c660;
---font-size-xs: 12px;
---font-size-md: 16px;
---font-size-xl: 28px;
-                }</code></pre>
+                <pre><code class="language-css" id="design-token-code"></code></pre>
           </div>
         </div>
 
@@ -386,7 +447,7 @@
         <div class="col-12 d-flex flex-column justify-content-md-center">
           <div class="mb-4 py-5">
             <h1>UI Window</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magni officiis velit modi atque mollitia deserunt. Illo amet deserunt eum blanditiis excepturi ullam neque magnam temporibus pariatur! Ab, labore cumque?</p>
+            <p>Explore different UI components built using CSS custom properties.</p>
           </div>
         </div>
       </div>
@@ -399,9 +460,9 @@
             <p class="choose-text">Name contains a lot of thing.</p>
 
             <div class="choices-button">
-              <button class="btn btn-outline-primary choice-btn">Korean name</button>
-              <button class="btn btn-outline-primary choice-btn">Japanese name</button>
-              <button class="btn btn-outline-primary choice-btn">Latin name</button>
+              <button class="btn button-reverse choice-btn">Korean name</button>
+              <button class="btn button-reverse choice-btn">Japanese name</button>
+              <button class="btn button-reverse choice-btn">Latin name</button>
             </div>
 
           </div>
@@ -424,19 +485,7 @@
         <!-- Code-Window -->
         <div class="col-12 col-md-6">
           <div class="code-window h-100">
-                <pre><code class="language-css">.demo-ui-window{
-  background-image: var(--paper-tex-bg-3);
-  width: 100%;
-  background-size: cover;
-  background-repeat: repeat;
-  min-height: 200px;
-  border: 2px solid var(--color-text-muted);
-  border-radius: var(--border-radius-md);
-  padding:30px;
-  position: relative;
-}
-
-.demo-ui-window-02{
+                <pre><code class="language-css">.demo-ui-window-02{
   background-image: var(--paper-tex-css-1);
   width: 100%;
   background-size: cover;
@@ -447,7 +496,20 @@
   position: relative;
   display: flex;
   align-items: center;
-} </code></pre>
+} 
+
+.character-label-01, .character-label-02{
+  display: block;
+  top: -14px; 
+  left: 24px;
+  color: var(--primary-color);
+  padding-bottom: var(--spacing-xs) var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  font-family: var(--font-heading);
+  border-bottom: 1px solid var(--secondary-color);
+}
+</code></pre>
           </div>
         </div>
 
@@ -473,7 +535,7 @@
 
         <div class="mb-4 py-5">
           <h1>Theme Transition Demo</h1>
-          <p>Toggle under the three theme!</p>
+          <p>Toggle between four different themes to see how variables dynamically change styles.</p>
 
           <div class="theme-button-grp gap-2">
             <button class="btn btn-outline-primary theme-button" data-theme-target="nakai">Nakai-Theme</button>
@@ -485,7 +547,8 @@
 
         <div class="theme-ui-window">
           <h3 class="theme-ui-hero">Preview</h3>
-          <p>You can change various styles theme by choosing one theme above.</p>
+          <p>Select a theme above to preview how the interface updates in real time. CSS variables are dynamic and can even be changed with JavaScript,
+            which makes them powerful for interactive design systems.</p>
         </div>
 
       </div>
@@ -493,15 +556,25 @@
         <!-- Code-Window -->
         <div class="col-12 col-md-6">
           <div class="code-window h-100">
-                <pre><code class="language-css" id="theme-code">:root {
---primary-color: #282828;
---secondary-color: #583c2b;
---color-accent: #ae1a1b;
---color-accent-gold: #e2c660;
---font-size-xs: 12px;
---font-size-md: 16px;
---font-size-xl: 28px;
-                }</code></pre>
+                <pre><code class="language-css" id="theme-code">  [data-theme="soyeon"]{
+    --bg-color:#e8ede4;
+    --primary-color: #1a2e12;
+    --secondary-color: #2d4a20;
+    --color-text: #1a2e12;
+    --color-text-secondary: #2d4a20;
+    --color-accent: #283618;
+    --color-text-muted: #6a7e62;
+    --corner-color: #5a8a3c;
+  }
+                  
+  body{
+      transition: background-color 0.5s ease, color 0.5s ease;
+      background-color: var(--bg-color);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: var(--font-size-md);
+      line-height: 1.7;
+    }</code></pre>
           </div>
         </div>
 
@@ -526,8 +599,8 @@
 
         <div class="mb-4 py-5">
           <h1>Bonus Section</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magni officiis velit modi atque mollitia deserunt. Illo amet deserunt eum blanditiis excepturi ullam neque magnam temporibus pariatur! Ab, labore cumque?</p>
-          <a href="fallback.html" class="btn button-primary">Do you have an issue?</a>
+          <p>Explore additional resources such as fallback values, browser support, and advanced usage examples.</p>
+          <a href="fallback.html" class="btn button-primary">Having trouble?</a>
         </div>
 
       </div>
@@ -539,23 +612,9 @@
 </section>
 
 <script>
-
-// <!-- Design Tokens Tabs -->
+// Design Tokens Tabs
 const tokenButtons = document.querySelectorAll('.design-token-btn');
 const tokenWindows = document.querySelectorAll('.token-window');
-
-tokenWindows.forEach(w => w.classList.remove('active'));
-document.getElementById('colors').classList.add('active');
-
-tokenButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target = btn.dataset.target;
-    tokenWindows.forEach(w => w.classList.remove('active'));
-    document.getElementById(target).classList.add('active');
-  });
-});
-
-// Design Tokens Code
 
 const tokenCodes = {
   colors: `:root {
@@ -569,8 +628,15 @@ const tokenCodes = {
   --color-accent-gold: #e2c660;
   --color-accent-green: #283618;
   --color-text-muted: #7a6e62;
+}
+
+/* Usage Example */
+body {
+  background-color: var(--bg-color);
+  color: var(--color-text);
 }`,
-buttons: ` .button-primary {
+
+  buttons: `.button-primary {
   background-color: var(--primary-color);
   color: var(--bg-color);
   border: 2px solid var(--primary-color);
@@ -581,8 +647,9 @@ buttons: ` .button-primary {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }`,
+
   typography: `:root {
- --font-heading: 'Operetta', serif;
+  --font-heading: 'Operetta', serif;
   --font-body: 'Steradian', sans-serif;
   --font-size-xs: 12px;
   --font-size-sm: 14px;
@@ -590,22 +657,42 @@ buttons: ` .button-primary {
   --font-size-lg: 20px;
   --font-size-xl: 28px;
   --font-size-2xl: 40px;
+}
+
+/* Usage Example */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+}
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
 }`
 };
 
+// Road
+tokenWindows.forEach(w => w.classList.remove('active'));
+document.getElementById('colors').classList.add('active');
+
+window.addEventListener('DOMContentLoaded', () => {
+  const codeElement = document.getElementById('design-token-code');
+  codeElement.textContent = tokenCodes['colors'];
+  Prism.highlightElement(codeElement);
+});
+
+// Click-button
 tokenButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const target = btn.dataset.target;
+
     tokenWindows.forEach(w => w.classList.remove('active'));
     document.getElementById(target).classList.add('active');
 
     const codeElement = document.getElementById('design-token-code');
-    codeElement.textContent = tokenCodes[target];
+    codeElement.textContent = tokenCodes[target]; // Target (Changed)
     Prism.highlightElement(codeElement);
   });
 });
-
-
 
 
 // Theme Transition Code
