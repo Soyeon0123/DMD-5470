@@ -30,6 +30,27 @@
 </head>
 
 <body>
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-md sticky-top" id="main-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#">CSS Custom Properties</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#first">How to Use</a></li>
+        <li class="nav-item"><a class="nav-link" href="#second">Benefits</a></li>
+        <li class="nav-item"><a class="nav-link" href="#third">Design Tokens</a></li>
+        <li class="nav-item"><a class="nav-link" href="#fourth">UI Window</a></li>
+        <li class="nav-item"><a class="nav-link" href="#fifth">Theme Demo</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
 
 <!-- First section: How to Use? -->
 <section id="first">
@@ -175,8 +196,6 @@
     min-height: 200px;
     border: 2px solid var(--color-text-muted);
     border-radius: var(--border-radius-md);
-    padding:30px;
-    position: relative;
   }
 
 </code></pre>
@@ -229,7 +248,7 @@
                     Changing a few variable values can update the entire appearance of a site.
                     This page demonstrates theme switching using the buttons below.</p>
                 </div>
-                <pre><code class="language-css" id="theme-code">[data-theme="brown"]{
+                <pre><code class="language-css" id="theme-code-card">[data-theme="brown"]{
     --bg-color:#ece4da;
     --primary-color: #282828;
     --secondary-color: #583c2b;
@@ -309,7 +328,7 @@
                     <div class="color-card" style="background: var(--primary-color);"></div>
                     <div class="card-body">
                       <h5>--primary-color</h5>
-                      <p class="card-text">#282828</p>
+                      <p class="card-text" data-color="primary"></p>
                     </div>
                   </div>
                 </div>
@@ -318,7 +337,7 @@
                     <div class="color-card" style="background: var(--secondary-color);"></div>
                     <div class="card-body">
                       <h5>--secondary-color</h5>
-                      <p class="card-text">#583c2b</p>
+                      <p class="card-text" data-color="secondary"></p>
                     </div>
                   </div>
                 </div>
@@ -327,34 +346,34 @@
                     <div class="color-card" style="background: var(--color-accent);"></div>
                     <div class="card-body">
                       <h5>--color-accent</h5>
-                      <p class="card-text">#ae1a1b</p>
+                      <p class="card-text" data-color="accent"></p>
                     </div>
                   </div>
                 </div>
                 <div class="col-12 col-md-4 d-flex">
                   <div class="card w-100">
-                    <div class="color-card" style="background: var(--color-accent-secondary);"></div>
+                    <div class="color-card" style="background: var(--color-text-secondary);"></div>
                     <div class="card-body">
-                      <h5>--color-accent-secondary</h5>
-                      <p class="card-text">#0042AF</p>
+                      <h5>--color-text-secondary</h5>
+                      <p class="card-text" data-color="textSecondary"></p>
                     </div>
                   </div>
                 </div>
                 <div class="col-12 col-md-4 d-flex">
                   <div class="card w-100">
-                    <div class="color-card" style="background: var(--color-accent-gold);"></div>
+                    <div class="color-card" style="background: var(--color-text-muted);"></div>
                     <div class="card-body">
-                      <h5>--color-accent-gold</h5>
-                      <p class="card-text">#e2c660</p>
+                      <h5>--color-text-muted</h5>
+                      <p class="card-text" data-color="textMuted"></p>
                     </div>
                   </div>
                 </div>
                 <div class="col-12 col-md-4 d-flex">
                   <div class="card w-100">
-                    <div class="color-card" style="background: var(--color-accent-green);"></div>
+                    <div class="color-card" style="background: var(--corner-color);"></div>
                     <div class="card-body">
-                      <h5>--color-accent-green</h5>
-                      <p class="card-text">#283618</p>
+                      <h5>--corner-color</h5>
+                      <p class="card-text" data-color="cornerColor"></p>
                     </div>
                   </div>
                 </div>
@@ -538,10 +557,10 @@
           <p>Toggle between four different themes to see how variables dynamically change styles.</p>
 
           <div class="theme-button-grp gap-2">
-            <button class="btn btn-outline-primary theme-button" data-theme-target="nakai">Nakai-Theme</button>
-            <button class="btn btn-outline-secondary theme-button" data-theme-target="soyeon">Soyeon-Theme</button>
-            <button class="btn btn-light theme-button" data-theme-target="original">Original-Theme</button>
-            <button class="btn btn-dark theme-button" data-theme-target="brown">Brown-Theme</button>
+            <button class="btn theme-button theme-button-nakai" data-theme-target="nakai">Nakai-Theme</button>
+            <button class="btn theme-button theme-button-soyeon" data-theme-target="soyeon">Soyeon-Theme</button>
+            <button class="btn theme-button theme-button-original" data-theme-target="original">Original-Theme</button>
+            <button class="btn theme-button theme-button-brown" data-theme-target="brown">Brown-Theme</button>
           </div>
         </div>
 
@@ -556,7 +575,7 @@
         <!-- Code-Window -->
         <div class="col-12 col-md-6">
           <div class="code-window h-100">
-                <pre><code class="language-css" id="theme-code">  [data-theme="soyeon"]{
+                <pre><code class="language-css" id="theme-code-window">  [data-theme="soyeon"]{
     --bg-color:#e8ede4;
     --primary-color: #1a2e12;
     --secondary-color: #2d4a20;
@@ -678,6 +697,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const codeElement = document.getElementById('design-token-code');
   codeElement.textContent = tokenCodes['colors'];
   Prism.highlightElement(codeElement);
+  
+  const colors = themeColors['brown'];
+  document.querySelector('[data-color="primary"]').textContent = colors.primary;
+  document.querySelector('[data-color="secondary"]').textContent = colors.secondary;
+  document.querySelector('[data-color="accent"]').textContent = colors.accent;
+  document.querySelector('[data-color="textSecondary"]').textContent = colors.textSecondary;
+  document.querySelector('[data-color="textMuted"]').textContent = colors.textMuted;
+  document.querySelector('[data-color="cornerColor"]').textContent = colors.cornerColor;
 });
 
 // Click-button
@@ -693,6 +720,46 @@ tokenButtons.forEach(btn => {
     Prism.highlightElement(codeElement);
   });
 });
+
+// Design Tokens Hex Change
+const themeColors ={
+  nakai: {
+    primary: '#e8dcc8',
+    secondary: '#c9b99a',
+    accent: '#ae1a1b',
+    textSecondary: '#c9b99a',
+    textMuted: '#8a7a6e',
+    cornerColor: '#ae1a1b'
+  },
+
+  soyeon: {
+    primary: '#1a2e12',
+    secondary: '#2d4a20',
+    accent: '#0042AF',
+    textSecondary: '#2d4a20',
+    textMuted: '#6a7e62',
+    cornerColor: '#5a8a3c'
+  },
+
+  original: {
+    primary:'#111111',
+    secondary: '#444444',
+    accent: '#111111',
+    textSecondary: '#444444',
+    textMuted: '#888888',
+    cornerColor: '#111111'
+  },
+
+  brown: {
+    primary: '#282828',
+    secondary: '#583c2b',
+    accent: '#ae1a1b',
+    textSecondary:'#583c2b',
+    textMuted: '#7a6e62',
+    cornerColor: '#e2c660'
+  }
+};
+
 
 
 // Theme Transition Code
@@ -756,9 +823,24 @@ themeButtons.forEach(btn => {
     themeButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    const codeElement = document.getElementById('theme-code');
-    codeElement.textContent = themeCodes[selectedTheme];
-    Prism.highlightElement(codeElement);
+    const codeCard = document.getElementById('theme-code-card');
+    const codeWindow = document.getElementById('theme-code-window');
+
+    codeCard.textContent = themeCodes[selectedTheme];
+    codeWindow.textContent = themeCodes[selectedTheme];
+
+    Prism.highlightElement(codeCard);
+    Prism.highlightElement(codeWindow);
+
+    // Color hex update
+    const colors = themeColors[selectedTheme];
+    document.querySelector('[data-color="primary"]').textContent = colors.primary;
+    document.querySelector('[data-color="secondary"]').textContent = colors.secondary;
+    document.querySelector('[data-color="accent"]').textContent = colors.accent;
+    document.querySelector('[data-color="textSecondary"]').textContent = colors.textSecondary;
+    document.querySelector('[data-color="textMuted"]').textContent = colors.textMuted;
+    document.querySelector('[data-color="cornerColor"]').textContent = colors.cornerColor;
+
   });
 });
 

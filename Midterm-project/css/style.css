@@ -196,6 +196,20 @@ textarea {
     --corner-color: #ae1a1b;
   }
 
+  /* Nakai Theme Dark Font Color */
+
+  [data-theme="nakai"] #first h3,
+  [data-theme="nakai"] #first h4,
+  [data-theme="nakai"] #third h5,
+  [data-theme="nakai"] #fourth,
+  [data-theme="nakai"] #fourth h1,
+  [data-theme="nakai"] #fourth h2,
+  [data-theme="nakai"] #fourth p,
+  [data-theme="nakai"] #fourth .character-label-01,
+  [data-theme="nakai"] #fourth .character-label-02 {
+    color: #1a1210;
+  }
+
   /* Soyeon Theme */
   [data-theme="soyeon"]{
     --bg-color:#e8ede4;
@@ -203,7 +217,7 @@ textarea {
     --secondary-color: #2d4a20;
     --color-text: #1a2e12;
     --color-text-secondary: #2d4a20;
-    --color-accent: #283618;
+    --color-accent: #0042AF;
     --color-text-muted: #6a7e62;
     --corner-color: #5a8a3c;
   }
@@ -227,7 +241,7 @@ textarea {
     --secondary-color: #583c2b;
     --color-text: #28282b;
     --color-text-secondary: #583c2b;
-    --color-accent: #282828;
+    --color-accent: #ae1a1b;
     --color-text-muted: #7a6e62;
     --corner-color: #e2c660;
   }
@@ -239,7 +253,23 @@ textarea {
     gap: 8px;
   }
 
+  /* Navigation Tab bar  */
+  #main-nav {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--secondary-color);
+    transition: background-color 0.5s ease;
+  }
 
+  #main-nav .navbar-brand,
+  #main-nav .nav-link {
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+  }
+
+  #main-nav .nav-link:hover {
+    color: var(--color-accent);
+  }
 
   /* Button Tokens */
 
@@ -369,6 +399,19 @@ section{
   color: var(--color-text-secondary);
 }
 
+#first .code-window{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+}
+
+#first .code-window pre{
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
 #second{
   background-color: var(--bg-color);
 }
@@ -392,12 +435,13 @@ section{
 .color-card{
   width: 100%;
   height: 150px;
-  border-radius: var(--border-radius-md);
+  border-radius: 0;
 }
 
 .card{
   border: 1px solid var(--secondary-color);
   transition: border-color 0.3s ease;
+  overflow: hidden;
 }
 
 .feature-card{
@@ -424,6 +468,13 @@ section{
   border-radius: var(--border-radius-md);
   padding:30px;
   position: relative;
+}
+
+.choices-button{
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
 }
 
 .next-arrow{
@@ -466,17 +517,6 @@ section{
   align-items: center;
 }
 
-.next-arrow{
-  background-image: var(--basic-arrow);
-  width: 32px;
-  height: 32px;
-  background-size: contain;
-  background-position: center;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: block;
-}
 
 .character-label-01, .character-label-02{
   display: block;
@@ -494,7 +534,58 @@ section{
   margin-top: var(--spacing-md);
 }
 
+.theme-button-nakai {
+  background-color: #ae1a1b;
+  color: #e8dcc8;
+  border: 2px solid #ae1a1b;
+}
 
+.theme-button-soyeon {
+  background-color: #283618;
+  color: #e8ede4;
+  border: 2px solid #283618;
+}
+
+.theme-button-original {
+  background-color: #111111;
+  color: #f5f5f5;
+  border: 2px solid #111111;
+}
+
+.theme-button-brown {
+  background-color: #583c2b;
+  color: #ece4da;
+  border: 2px solid #583c2b;
+}
+
+.theme-button-nakai,
+.theme-button-soyeon,
+.theme-button-original,
+.theme-button-brown {
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.theme-button-nakai:hover {
+  background-color: transparent;
+  color: #ae1a1b;
+}
+.theme-button-soyeon:hover{
+  background-color: transparent;
+  color: #283618;
+}
+.theme-button-original:hover{
+  background-color: transparent;
+  color: #111111;
+}
+.theme-button-brown:hover {
+  background-color: transparent;
+  color: #583c2b;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
