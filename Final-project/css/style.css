@@ -179,7 +179,7 @@ textarea {
 .btn-rootin-primary {
   background: var(--accent);
   border: none;
-  color: #F3EFE3;
+  color: var(--bg);
 }
 
 .btn-rootin-primary:hover,
@@ -197,11 +197,11 @@ textarea {
 .btn-rootin-outline:hover,
 .btn-rootin-outline:focus {
   background: var(--accent);
-  color: #FFFFFF;
+  color: var(--surface);
 }
 
 .navbar-custom {
-  background: #344C3D !important;
+  background: var(--primary) !important;
 }
 
 .nav-link-custom {
@@ -222,7 +222,7 @@ textarea {
 
 .btn-rootin-cta:hover,
 .btn-rootin-cta:focus {
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .eyebrow {
@@ -244,7 +244,14 @@ textarea {
 .news-card,
 .review-card,
 .video-card {
-  background: #FFFFFF;
+  background: var(--surface);
+}
+
+.review-card {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .stat-card h3,
@@ -278,7 +285,7 @@ textarea {
 }
 
 .step-list {
-  background: #FFFFFF;
+  background: var(--surface);
 }
 
 .step-list li {
@@ -310,7 +317,7 @@ textarea {
   border-radius: 50%;
   border: none;
   background: rgba(88, 47, 14, 0.85);
-  color: #FFFFFF;
+  color: var(--surface);
   font-size: 1.5rem;
   display: grid;
   place-items: center;
@@ -350,6 +357,10 @@ textarea {
   background: #F3EFE3;
 }
 
+.carousel-item {
+  min-height: 220px;
+}
+
 .reviews-watermark {
   position: absolute;
   inset: 0;
@@ -366,6 +377,14 @@ textarea {
   min-width: 0;
 }
 
+.notify-input {
+  width: 100%;
+}
+
+.notify-btn {
+  width: 100%;
+}
+
 .app-badge {
   height: 3rem;
 }
@@ -378,13 +397,34 @@ textarea {
   flex-wrap: wrap;
 }
 
+.store-btn {
+  min-width: 280px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.store-btn i {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.store-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 .footer {
   padding: 3rem 1rem;
 }
 
 .footer .social-links a,
 .footer .footer-links a {
-  color: #FFFFFF;
+  color: var(--surface);
 }
 
 .back-to-top {
@@ -396,12 +436,43 @@ textarea {
   border: none;
   border-radius: 50%;
   background: var(--accent);
-  color: #FFFFFF;
+  color: var(--surface);
   font-size: 1.25rem;
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 1050;
+}
+
+  section {
+    padding: 2rem 1rem !important;
+  }
+
+  .hero {
+    padding: 2rem 1rem !important;
+  }
+
+  main > section {
+    margin: 0 !important;
+  }
+
+@media (min-width: 576px) {
+  .download-buttons .store-btn {
+    flex: 1 1 0;
+    max-width: 320px;
+  }
+
+  .notify-input {
+    width: 400px;
+    flex: 0 0  400px;
+    max-width: 400px;
+  }
+
+  .notify-btn {
+    width: auto;
+    flex: 0 0 auto;
+    min-width: 160px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -439,26 +510,10 @@ textarea {
 
   .download-form {
     align-items: flex-start;
+    width: 100%;
   }
 }
 
-@media (max-width: 767px) {
-  section {
-    padding: 2rem 1rem !important;
-  }
-
-  .hero {
-    padding: 2rem 1rem !important;
-  }
-
-  body {
-    background: var(--bg);
-  }
-
-  main > section {
-    margin: 0 !important;
-  }
-}
 
 @media (min-width: 1200px) {
   .hero {
@@ -467,6 +522,78 @@ textarea {
 
   .hero .hero-image {
     max-width: 480px;
+  }
+}
+
+/* Dark Mode */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #151816;
+    --text: #F3EFE3;
+    --muted: #C7C1B8;
+    --primary: #202B24;
+    --accent: #A36A45;
+    --surface: #1D221F;
+    --soft: #252B27;
+
+
+    .section-muted {
+      background: #2B312D;
+    }
+
+    .hero .eyebrow {
+      color: #D6DDD4;
+    }
+
+    .hero .lead {
+      color: #D8E1DA;
+    }
+
+    .stat-card,
+    .feature-card,
+    .step-detail,
+    .news-card,
+    .review-card,
+    .video-card {
+      border-color: rgba(243, 239, 227, 0.08);
+    }
+
+    .text-muted {
+      color: var(--muted) !important;
+    }
+
+    .btn-light {
+      background: var(--surface);
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .btn-light:hover,
+    .btn-light:focus {
+      background: #2C332E;
+      border-color: #2C332E;
+      color: var(--text);
+    }
+
+    .form-control {
+      background: var(--surface);
+      border: 1px solid rgba(243, 239, 227, 0.12);
+      color: var(--text);
+    }
+
+    .form-control::placeholder {
+      color: var(--muted);
+    }
+
+    .form-control:focus {
+      background: var(--surface);
+      border-color: var(--accent);
+      color: var(--text);
+      box-shadow: 0 0 0 0.25rem rgba(163, 106, 69, 0.25);
+    }
+
   }
 }
 
