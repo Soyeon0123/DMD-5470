@@ -200,6 +200,21 @@ textarea {
   color: var(--surface);
 }
 
+.navbar-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  width: 100%;
+  height: auto;
+}
+
 .navbar-custom {
   background: var(--primary) !important;
 }
@@ -234,8 +249,10 @@ textarea {
   color: var(--accent) !important;
 }
 
-.hero-image {
-  max-width: 420px;
+
+.about-character {
+  width: 70%;
+  max-width: 480px;
 }
 
 .stat-card,
@@ -279,7 +296,7 @@ textarea {
   height: 3rem;
   display: grid;
   place-items: center;
-  background: rgba(88, 47, 14, 0.1);
+  /* background: rgba(88, 47, 14, 0.1); */
   border-radius: 1rem;
   font-size: 1.5rem;
 }
@@ -303,32 +320,62 @@ textarea {
   border: 1px solid rgba(52, 76, 61, 0.12);
 }
 
-.video-card {
+/* .video-card {
   position: relative;
+} */
+
+#tutorial {
+  background-image: url(../img/play_bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 480px;
+  height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.tutorial-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
 }
 
 .video-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
   border: none;
-  background: rgba(88, 47, 14, 0.85);
-  color: var(--surface);
-  font-size: 1.5rem;
-  display: grid;
-  place-items: center;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.play-icon {
+  width: 5rem;
+  height: 5rem;
+  display: block;
 }
 
 .news-card {
   border: 1px solid rgba(52, 76, 61, 0.12);
 }
 
+.news-image {
+  height: 400px;
+  overflow: hidden;
+}
+
 .news-image img {
+  width:100%;
+  height:100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .carousel-controls {
@@ -361,11 +408,20 @@ textarea {
   min-height: 220px;
 }
 
+#reviews {
+  background: #F3EFE3;
+  color: var(--text) !important;
+}
+
 .reviews-watermark {
   position: absolute;
-  inset: 0;
+  width: 80%;
+  top: -12rem;
+  left: -18rem;
+  
   opacity: 0.08;
   pointer-events: none;
+  z-index: 0;
 }
 
 .section-accent {
@@ -444,16 +500,30 @@ textarea {
   z-index: 1050;
 }
 
+.back-to-top-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
   section {
-    padding: 2rem 1rem !important;
+    padding: 2rem 1rem 
   }
 
   .hero {
-    padding: 2rem 1rem !important;
+    padding: 2rem 1rem 
   }
 
   main > section {
     margin: 0 !important;
+  }
+
+
+  /* MockUp */
+
+  .hero-mockup {
+    width: 100%;
+    height: auto;
   }
 
 @media (min-width: 576px) {
@@ -476,6 +546,12 @@ textarea {
 }
 
 @media (min-width: 768px) {
+
+  /* parallax effect */
+  #tutorial {
+    background-attachment: fixed;
+  }
+
   .hero {
     padding: 5rem 0;
   }
@@ -521,7 +597,7 @@ textarea {
   }
 
   .hero .hero-image {
-    max-width: 480px;
+    width: 100%;
   }
 }
 
@@ -561,7 +637,7 @@ textarea {
     }
 
     .text-muted {
-      color: var(--muted) !important;
+      color: var(--muted);
     }
 
     .btn-light {
