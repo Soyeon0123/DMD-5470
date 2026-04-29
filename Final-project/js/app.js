@@ -53,4 +53,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateActiveLink();
   toggleBackToTop();
+
+// Carousel
+
+const carousel = new bootstrap.Carousel(
+  document.getElementById('reviewsCarousel')
+);
+
+const prevIcon = document.getElementById('prevIcon');
+const nextIcon = document.getElementById('nextIcon');
+const dots = document.querySelectorAll('.carousel-indicator-icon');
+  
+function updateDots(index) {
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[index].classList.add('active');
+}
+
+document.getElementById('reviewsCarousel').addEventListener('slide.bs.carousel', (event) => {
+  updateDots(event.to);
 });
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  prevIcon.src = 'img/icon/arrowR_onclick_b_icon.svg';
+  carousel.prev();
+
+  setTimeout(() => {
+    prevIcon.src = 'img/icon/arrowR_b_icon.svg';
+  }, 200);
+});
+document.getElementById('nextBtn').addEventListener('click', () => {
+  nextIcon.src = 'img/icon/arrowL_onclick_b_icon.svg';
+  carousel.next();
+
+  setTimeout(() => {
+    nextIcon.src = 'img/icon/arrowL_b_icon.svg';
+  }, 200);
+});
+
+
+});
+

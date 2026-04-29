@@ -237,7 +237,8 @@ textarea {
 
 .btn-rootin-cta:hover,
 .btn-rootin-cta:focus {
-  background: var(--surface);
+  background: var(--accent);
+  color: var(--surface);
 }
 
 .eyebrow {
@@ -378,6 +379,24 @@ textarea {
   display: block;
 }
 
+.carousel-arrow-icon-btn {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.carousel-arrow-icon-btn:focus,
+.carousel-arrow-icon-btn:active,
+.carousel-arrow-icon-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.carousel-arrow-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
 .carousel-controls {
   order: 3;
 }
@@ -387,25 +406,31 @@ textarea {
   font-weight: 600;
 }
 
-.carousel-indicators {
-  order: 2;
-  justify-content: center;
-  margin-bottom: 0 !important;
-}
-
-.carousel-indicators [data-bs-target] {
-  width: 0.8rem;
-  height: 0.8rem;
+.carousel-indicator-icon {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
+  background: #582F0E;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.carousel-indicators .active {
-  background: #F3EFE3;
+.carousel-indicator-icon.active {
+  background: #ffffff;
 }
 
 .carousel-item {
   min-height: 220px;
+}
+
+.carousel-dots {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  align-items: center;
 }
 
 #reviews {
@@ -415,10 +440,10 @@ textarea {
 
 .reviews-watermark {
   position: absolute;
-  width: 80%;
-  top: -12rem;
-  left: -18rem;
-  
+  width: 1000px;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
   opacity: 0.08;
   pointer-events: none;
   z-index: 0;
@@ -454,7 +479,6 @@ textarea {
 }
 
 .store-btn {
-  min-width: 280px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -505,6 +529,11 @@ textarea {
   height: 24px;
 }
 
+.step-icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
 
   section {
     padding: 2rem 1rem 
@@ -518,13 +547,21 @@ textarea {
     margin: 0 !important;
   }
 
-
   /* MockUp */
 
   .hero-mockup {
     width: 100%;
     height: auto;
   }
+
+  .hero-image .hero-mockup {
+    max-width: 400px;
+  }
+
+  #how-it-works .hero-mockup {
+    max-width: 400px;
+  }
+
 
 @media (min-width: 576px) {
   .download-buttons .store-btn {
@@ -590,6 +627,11 @@ textarea {
   }
 }
 
+@media (min-width: 992px) {
+  .hero-image .hero-mockup, #how-it-works .hero-mockup {
+    max-width: 60%;
+  }
+}
 
 @media (min-width: 1200px) {
   .hero {
