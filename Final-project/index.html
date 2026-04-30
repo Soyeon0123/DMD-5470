@@ -105,14 +105,14 @@
             <picture>
               <source media="(min-width: 1200px)" srcset="img/Rootin_character.png">
               <source media="(min-width: 768px)" srcset="img/Rootin_character_mobile.png">
-              <img src="img/Rootin_character.png" alt="About Rootin illustration" class="img-fluid mx-auto d-block about-character">
+              <img src="img/Rootin_character_mobile.png" alt="About Rootin illustration" class="img-fluid mx-auto d-block about-character">
             </picture>
           </div>
         </div>
         <div class="row g-3 mt-4">
 
           <div class="col-sm-6 col-lg-4">
-            <div class="stat-card p-4 rounded-4 h-100">
+            <div class="stat-card p-4 rounded-4 h-100" data-aos="fade-up" data-aos-delay="0">
                <div class="d-flex align-items-center gap-4 mb-3">
                 <h3 class="stat-value mb-0">Daily</h3>
                 <div class="rounded d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
@@ -123,7 +123,7 @@
             </div>
           </div>
           <div class="col-sm-6 col-lg-4">
-            <div class="stat-card p-4 rounded-4 h-100">
+            <div class="stat-card p-4 rounded-4 h-100" data-aos="fade-up" data-aos-delay="100">
               <div class="d-flex align-items-center gap-4 mb-3">
                 <h3 class="stat-value mb-0">Growth</h3>
                 <div class="rounded d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
@@ -134,7 +134,7 @@
             </div>
           </div>
           <div class="col-sm-6 col-lg-4">
-            <div class="stat-card p-4 rounded-4 h-100">
+            <div class="stat-card p-4 rounded-4 h-100" data-aos="fade-up" data-aos-delay="200">
               <div class="d-flex align-items-center gap-4 mb-3">
                 <h3 class="stat-value mb-0">Care</h3>
                 <div class="rounded d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
@@ -156,7 +156,7 @@
         </div>
         <div class="row g-4">
           <div class="col-md-6 col-xl-4">
-            <article class="feature-card p-4 h-100 rounded-4 shadow-sm">
+            <article class="feature-card p-4 h-100 rounded-4 shadow-sm" data-aos="fade-up" data-aos-delay="0">
 
               <div class="feature-icon mb-3">
                 <img src="img/icon/trend_b_icon.svg" alt="">
@@ -168,7 +168,7 @@
           </div>
 
           <div class="col-md-6 col-xl-4">
-            <article class="feature-card p-4 h-100 rounded-4 shadow-sm">
+            <article class="feature-card p-4 h-100 rounded-4 shadow-sm" data-aos="fade-up" data-aos-delay="100">
 
               <div class="feature-icon mb-3">
                 <img src="img/icon/sympt_02_b_icon.svg" alt="">
@@ -180,7 +180,7 @@
           </div>
 
           <div class="col-md-6 col-xl-4">
-            <article class="feature-card p-4 h-100 rounded-4 shadow-sm">
+            <article class="feature-card p-4 h-100 rounded-4 shadow-sm" data-aos="fade-up" data-aos-delay="200">
               <div class="feature-icon mb-3">
                 <img src="img/icon/info_b_icon.svg" alt="">
               </div>
@@ -292,7 +292,7 @@
                   type="image/png"
                   sizes="(min-width: 992px) 50vw, 100vw">
                   <img src="img/info_sm.png" alt="Phone mockup" class="img-fluid hero-mockup"
-                  loading="eager" width="640" height="360">
+                  loading="lazy" width="640" height="360">
                 </picture>
               </div>
             </div>
@@ -322,7 +322,7 @@
                   type="image/png"
                   sizes="(min-width: 992px) 50vw, 100vw">
                   <img src="img/track_sm.png" alt="Phone mockup" class="img-fluid hero-mockup"
-                  loading="eager" width="640" height="360">
+                  loading="lazy" width="640" height="360">
                 </picture>
               </div>
           </div>
@@ -333,7 +333,7 @@
     <section class="section-muted" id="tutorial">
       <div class="tutorial-inner">
         <p class="eyebrow text-uppercase text-rootin-accent mb-2">Tutorial</p>
-        <h2 class="fw-bold mb-4">See how Rootin works.</h2>
+        <h2 class="fw-bold mb-4" data-aos="fade-up">See how Rootin works.</h2>
         <button type="button" class="video-play-button" aria-label="Play tutorial video">
           <img src="img/icon/play_b_icon.svg" alt="Play tutorial video" class="play-icon">
         </button>
@@ -349,12 +349,14 @@
         </div>
         <div class="row g-4">
           <div class="col-md-6 col-xl-4">
-            <article class="news-card p-4 rounded-4 h-100 shadow-sm">
+            <article class="news-card p-4 rounded-4 h-100 shadow-sm" data-aos="fade-up" data-aos-delay="0">
               <div class="news-image mb-3 rounded-4 overflow-hidden">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="img/article1.jpg">
-                  <source media="(min-width: 576px)" srcset="img/article1.jpg">
-                  <img src="img/article1.jpg" alt="Wellness news placeholder" class="img-fluid w-100">
+                  <source srcset="img/article1_sm.jpg 640w,
+                  img/article1_lg.jpg 1200w"
+                  type="image/jpeg"
+                  sizes="(min-width: 768px) 50vw, 100vw">
+                  <img src="img/article1_sm.jpg" alt="Wellness news placeholder" class="img-fluid w-100" loading="lazy" width="640" height="480">
                 </picture>
               </div>
               <p class="text-uppercase text-rootin-accent fw-semibold mb-1">Health</p>
@@ -365,12 +367,14 @@
             </article>
           </div>
           <div class="col-md-6 col-xl-4">
-            <article class="news-card p-4 rounded-4 h-100 shadow-sm">
+            <article class="news-card p-4 rounded-4 h-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
               <div class="news-image mb-3 rounded-4 overflow-hidden">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="img/article2.jpg">
-                  <source media="(min-width: 576px)" srcset="img/article2.jpg">
-                  <img src="img/article2.jpg" alt="Companion stories placeholder" class="img-fluid w-100">
+                  <source srcset="img/article2_sm.jpg 640w,
+                  img/article2_lg.jpg 1200w"
+                  type="image/jpeg"
+                  sizes="(min-width: 768px) 50vw, 100vw">
+                  <img src="img/article2_sm.jpg" alt="Companion stories placeholder" class="img-fluid w-100" loading="lazy" width="640" height="480">
                 </picture>
               </div>
               <p class="text-uppercase text-rootin-accent fw-semibold mb-1">Community</p>
@@ -381,12 +385,14 @@
             </article>
           </div>
           <div class="col-md-6 col-xl-4">
-            <article class="news-card p-4 rounded-4 h-100 shadow-sm">
+            <article class="news-card p-4 rounded-4 h-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
               <div class="news-image mb-3 rounded-4 overflow-hidden">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="img/article3.png">
-                  <source media="(min-width: 576px)" srcset="img/article3.png">
-                  <img src="img/article3.png" alt="Care guides placeholder" class="img-fluid w-100">
+                  <source srcset="img/article3_sm.png 640w,
+                  img/article3_lg.png 1200w"
+                  type="image/png"
+                  sizes="(min-width: 768px) 50vw, 100vw">
+                  <img src="img/article3_sm.png" alt="Care guides placeholder" class="img-fluid w-100" loading="lazy" width="640" height="480">
                 </picture>
               </div>
               <p class="text-uppercase text-rootin-accent fw-semibold mb-1">Resources</p>
@@ -402,14 +408,14 @@
 
      <!-- image credit: Photo by Ivan Stern on Unsplash, Photo by Thomas William on Unsplash -->
 
-    <section class="section-soft position-relative overflow-hidden" id="reviews">
+    <section class="section-soft position-relative" id="reviews">
       <div class="reviews-watermark" aria-hidden="true">
         <img src="img/logo.svg" alt="" class="img-fluid">
       </div>
       <div class="container position-relative">
         <div class="text-center mb-5">
           <p class="eyebrow text-uppercase mb-2">User Reviews</p>
-          <h2 class="fw-bold">Loved by women building their care routine.</h2>
+          <h2 class="fw-bold" data-aos="fade-up">Loved by women building their care routine.</h2>
         </div>
         <div id="reviewsCarousel" class="carousel slide position-relative" data-bs-ride="false" style="max-width: 900px; margin: 0 auto;">
           <div class="carousel-inner" style="position: relative;">
@@ -468,7 +474,7 @@
         <div class="row">
           <div class="col-12 text-center">
             <p class="eyebrow text-uppercase mb-2">Download App</p>
-            <h2 class="fw-bold mb-4">Be the first to know when Rootin launches.</h2>
+            <h2 class="fw-bold mb-4" data-aos="fade-up">Be the first to know when Rootin launches.</h2>
             <p class="text-light mb-4" style="max-width: 640px; margin-left: auto; margin-right: auto;">Enter your email to receive a launch notification and early access updates.</p>
             <form class="download-form d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5" novalidate>
               <label class="visually-hidden" for="notifyEmail">Email address</label>
