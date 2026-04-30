@@ -213,6 +213,7 @@ textarea {
 .navbar-logo {
   width: 100%;
   height: auto;
+  align-items: center;
 }
 
 .navbar-custom {
