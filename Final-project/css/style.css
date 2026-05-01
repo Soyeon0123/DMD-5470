@@ -221,9 +221,10 @@ textarea {
   transition: color 0.3s ease;
 }
 
+.navbar-brand,
 .nav-link-custom:hover,
 .nav-link-custom:focus {
-  color: #F3EFE3 !important;
+  color: var(--surface) !important;
 }
 
 .btn-rootin-cta {
