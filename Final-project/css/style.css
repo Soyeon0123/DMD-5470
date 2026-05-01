@@ -285,6 +285,21 @@ textarea {
   margin-bottom: 0.75rem;
 }
 
+.stat-card,
+.feature-card,
+.step-detail,
+.news-card {
+  padding: 2rem;
+}
+
+.step-detail h3 {
+  margin-bottom: 0.75rem;
+}
+
+.step-detail p {
+  margin-bottom: 0;
+}
+
 .feature-card {
   min-height: 230px;
 }
@@ -432,20 +447,15 @@ textarea {
 
 #reviews {
   background: #F3EFE3;
+  background-image: url("../img/review_bg.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
   color: var(--text) !important;
+  position: relative;
 }
 
-.reviews-watermark {
-  position: absolute;
-  width: 1000px;
-  max-width: none;
-  top: 50%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-}
+
 
 .section-accent {
   background: var(--accent);
@@ -534,7 +544,7 @@ textarea {
 }
 
   section {
-    padding: 2rem 1rem 
+    padding: 3rem 1rem 
   }
 
   .hero {
@@ -581,6 +591,10 @@ textarea {
 }
 
 @media (min-width: 768px) {
+
+  section {
+    padding: 5rem 0;
+  }
 
   /* parallax effect */
   #tutorial {
@@ -667,17 +681,54 @@ textarea {
     color: #D8E1DA;
   }
 
+  .navbar-brand,
+  .navbar-brand span,
+  .nav-link-custom {
+    color: #FFFFFF !important;
+  }
+
+  .nav-link-custom:hover,
+  .nav-link-custom:focus {
+    color: #FFFFFF !important;
+  }
+
   .stat-card,
   .feature-card,
   .step-detail,
   .news-card,
-  .review-card,
   .video-card {
+    background: #FFFFFF;
     border-color: rgba(243, 239, 227, 0.08);
   }
 
-  .text-muted {
+  .stat-card h3,
+  .feature-card h3,
+  .step-detail h3,
+  .news-card h3,
+  .stat-label,
+  .feature-card p,
+  .step-detail p,
+  .news-card p {
+    color: #001910 !important;
+  }
+
+  .text-muted,
+  .section-copy,
+  .stat-label,
+  .feature-card p,
+  .step-detail p,
+  .news-card p,
+  .review-card p {
     color: var(--muted);
+  }
+
+  #reviews {
+    background: #F3EFE3 !important;
+    color: #001910 !important;
+  }
+
+  #reviews .text-muted {
+    color: #FFFFFF !important;
   }
 
   .btn-light {
